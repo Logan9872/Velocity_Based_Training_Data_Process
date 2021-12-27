@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="22dQF1UUZXDa5KIzEVZasa6QaFz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/动捕和vbt曲线" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="OptiTrack_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="optimic_track_data" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\AnimeGANv2-master\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OptiTrack_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="optimic_track_data" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\AnimeGANv2-master\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Python36" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.OptiTrack_data" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="" />
+      <created>1640164876897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640164876897</updated>
+      <workItem from="1640164877987" duration="1784000" />
+      <workItem from="1640175892210" duration="11373000" />
+      <workItem from="1640219228656" duration="28734000" />
+      <workItem from="1640561721702" duration="11776000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="104" y="170" width="1144" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1640178412543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="104" y="170" width="1144" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640178412543" />
+    <state x="584" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1640174837796">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="584" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1640174837796" />
+    <state x="406" y="158" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1640178306652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="406" y="158" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640178306652" />
+    <state x="406" y="220" key="FileChooserDialogImpl" timestamp="1640331391953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="406" y="220" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640331391953" />
+    <state width="1865" height="518" key="GridCell.Tab.0.bottom" timestamp="1640190426078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426078" />
+    <state width="1865" height="518" key="GridCell.Tab.0.center" timestamp="1640190426078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426078" />
+    <state width="1865" height="518" key="GridCell.Tab.0.left" timestamp="1640190426078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426078" />
+    <state width="1865" height="518" key="GridCell.Tab.0.right" timestamp="1640190426078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426078" />
+    <state width="1865" height="518" key="GridCell.Tab.1.bottom" timestamp="1640190426079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426079" />
+    <state width="1865" height="518" key="GridCell.Tab.1.center" timestamp="1640190426079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426079" />
+    <state width="1865" height="518" key="GridCell.Tab.1.left" timestamp="1640190426078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426078" />
+    <state width="1865" height="518" key="GridCell.Tab.1.right" timestamp="1640190426079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="518" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426079" />
+    <state x="330" y="75" key="SettingsEditor" timestamp="1640178424687">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="330" y="75" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1640178424687" />
+    <state x="242" y="301" key="com.intellij.ide.util.TipDialog" timestamp="1640561728544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="242" y="301" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640561728544" />
+    <state x="229" y="5" key="search.everywhere.popup" timestamp="1640178116817">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="229" y="5" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640178116817" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OptiTrack_data$OptiTrack_data.coverage" NAME="OptiTrack_data Coverage Results" MODIFIED="1640189008966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$" />
+  </component>
+</project>

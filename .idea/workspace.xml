@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptiTrack_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptiTrack_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <workItem from="1640164877987" duration="1784000" />
       <workItem from="1640175892210" duration="11373000" />
       <workItem from="1640219228656" duration="28734000" />
-      <workItem from="1640561721702" duration="12319000" />
+      <workItem from="1640561721702" duration="19618000" />
     </task>
     <servers />
   </component>

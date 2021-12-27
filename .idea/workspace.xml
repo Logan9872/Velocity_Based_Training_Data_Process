@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OptiTrack_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptiTrack_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/动捕和vbt曲线" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/optical_track" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -90,7 +88,7 @@
       <workItem from="1640164877987" duration="1784000" />
       <workItem from="1640175892210" duration="11373000" />
       <workItem from="1640219228656" duration="28734000" />
-      <workItem from="1640561721702" duration="19618000" />
+      <workItem from="1640561721702" duration="22015000" />
     </task>
     <servers />
   </component>
@@ -110,10 +108,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="158" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640178306652" />
-    <state x="406" y="220" key="FileChooserDialogImpl" timestamp="1640331391953">
+    <state x="406" y="220" key="FileChooserDialogImpl" timestamp="1640610304947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="406" y="220" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640331391953" />
+    <state x="406" y="220" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640610304947" />
     <state width="1865" height="518" key="GridCell.Tab.0.bottom" timestamp="1640190426078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

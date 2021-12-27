@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 读取原始数据
-file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_002.csv'
-file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/002.csv"
+file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_030.csv'
+file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/030.csv"
 
 opti_track_data = pd.read_csv(file, skiprows=6, usecols=[2, 3, 4], encoding="unicode_escape")
 opti_track_time = pd.read_csv(file, skiprows=6, usecols=[1], encoding="unicode_escape")
@@ -19,7 +19,7 @@ distance['velocity'] = distance.apply(lambda x: math.sqrt(x['X']**2 + x['Y']**2 
 
 # 绘图
 plt.plot(opti_track_time, distance['velocity'], linewidth=0.4)
-plt.xlim((4, 8))
+# plt.xlim((4, 8))
 plt.xlabel("time(s)")
 plt.ylabel("velocity(m/s)")
 plt.show()
@@ -43,14 +43,14 @@ plt.show()
 # Opti Track设备和VBT设备滤波
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# 绘制两条曲线重叠图
-VBT_data['timeD'] = VBT_data.apply(lambda x: x['time'], axis=1)
-plt.plot(opti_track_time, distance['velocity'], linewidth=0.4, color='red', label='Opti Track')
-plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', label='VBT')
-plt.xlabel("time(s)")
-plt.ylabel("velocity(m/s)")
-plt.legend(loc="best", fontsize=8)
-plt.show()
+# # 绘制两条曲线重叠图
+# VBT_data['timeD'] = VBT_data.apply(lambda x: x['time'], axis=1)
+# plt.plot(opti_track_time, distance['velocity'], linewidth=0.4, color='red', label='Opti Track')
+# plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', label='VBT')
+# plt.xlabel("time(s)")
+# plt.ylabel("velocity(m/s)")
+# plt.legend(loc="best", fontsize=8)
+# plt.show()
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
 # 计算两条曲线的的相关函数，找到相关性最大的计算时间差
@@ -83,8 +83,8 @@ Convo_array = Convo.tolist()
 # 找到两条函数相关性最大的index,两条曲线时间轴对齐的为(i-m+1)
 Convo_index = Convo_array.index(max(Convo_array))
 
-# 平移的时间
-Trans_time = (Convo_index*1 - len(Opti_array)*1 + 1)*0.01
+# 平移的时间(T = Convo - VBT + 1)
+Trans_time = (Convo_index*1 - len(VBT_array)*1 + 1)*0.01
 print(Trans_time)
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————

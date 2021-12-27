@@ -44,7 +44,7 @@ plt.show()
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————————————————
 # 绘制两条曲线重叠图
-VBT_data['timeD'] = VBT_data.apply(lambda x: x['time']+3.7, axis=1)
+VBT_data['timeD'] = VBT_data.apply(lambda x: x['time'], axis=1)
 plt.plot(opti_track_time, distance['velocity'], linewidth=0.4, color='red', label='Opti Track')
 plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', label='VBT')
 plt.xlabel("time(s)")
@@ -69,11 +69,40 @@ Opti_array = np.array(Opti_data)
 
 # 计算卷积
 Convo = np.convolve(VBT_array, Opti_array)
-print(Convo)
-plt.plot(Convo, linewidth=0.4, color='red', label='卷积值')
-plt.ylabel("相关性")
+
+# 验证卷积后的数长度是否等于原数组长度相加-1
+# Conve = VBT_array + Opti_array - 1
+print(len(Convo))
+print(len(VBT_array))
+print(len(Opti_array))
+
+# nan全部替换成0
+Convo = np.nan_to_num(Convo)
+Convo_max = max(Convo)
+Convo_array = Convo.tolist()
+# 找到两条函数相关性最大的index,两条曲线时间轴对齐的为(i-m+1)
+Convo_index = Convo_array.index(max(Convo_array))
+
+# 平移的时间
+Trans_time = (Convo_index*1 - len(Opti_array)*1 + 1)*0.01
+print(Trans_time)
+
+# ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
+# 绘制计算卷积后的两条曲线的相关性曲线，峰值点即相关性最大点
+plt.plot(Convo, linewidth=0.4, color='red', label='Relativity')
+plt.ylabel("Relativity")
+plt.legend(loc="best", fontsize=8)
 plt.show()
 
+# ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
+# 再次绘制 平移时间轴的两条曲线
+VBT_data['timeD'] = VBT_data.apply(lambda x: x['time']+Trans_time, axis=1)
+plt.plot(opti_track_time, distance['velocity'], linewidth=0.4, color='red', label='Opti Track')
+plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', label='VBT')
+plt.xlabel("time(s)")
+plt.ylabel("velocity(m/s)")
+plt.legend(loc="best", fontsize=8)
+plt.show()
 
 
 

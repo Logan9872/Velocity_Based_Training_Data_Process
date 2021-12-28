@@ -3,7 +3,9 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-# from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error  # 均方误差|
+from sklearn.metrics import mean_absolute_error  # 平方绝对误差
+from sklearn.metrics import r2_score  # R square
 
 # 读取原始数据
 file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_031.csv'
@@ -87,7 +89,8 @@ Convo_array = Convo.tolist()
 Convo_index = Convo_array.index(max(Convo_array))
 
 # 平移的时间(T = Convo - VBT + 1)
-Trans_time = (Convo_index*1 - len(VBT_array)*1 + 1)*0.01
+Trans_index = (Convo_index*1 - len(VBT_array)*1 + 1)
+Trans_time = Trans_index*0.01
 print(Trans_time)
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -105,13 +108,39 @@ plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', l
 plt.xlabel("time(s)")
 plt.ylabel("velocity(m/s)")
 plt.legend(loc="best", fontsize=8)
-plt.savefig('C:/Users/Administrator/Desktop/动捕和vbt曲线/31.png')
+# plt.savefig('C:/Users/Administrator/Desktop/动捕和vbt曲线/.png')
 plt.show()
 
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# 求两个函数的相关系数R^2
+# 求两个函数的决定系数R^2
+velocity_data = pd.DataFrame() # 新建一个速度对比的df
 
+# 截取动捕的数据[i:len]段，再截取和VBT设备一样的长度
+Opti_slice_data = distance['velocity'].iloc[Trans_index:len(distance['velocity'])]
+# 重排截取后数据的index
+Opti_slice_data.reset_index(drop=True, inplace=True)
+# 将两组数据形成新的df，计算其P相关系数
+velocity_data['Opti'] = Opti_slice_data.iloc[0:len(VBT_data['velocity'])]
+velocity_data['VBT'] = VBT_data['velocity']
+plt.plot(velocity_data['VBT'], linewidth=0.4, color='blue', label='VBT')
+plt.plot(velocity_data['Opti'], linewidth=0.4, color='red', label='Opti Track')
+plt.show()
+# 将nan补0
+# 计算相关系数，默认是‘pearson’线性相关;'kendall','spearman'
+r = velocity_data.corr()
+R = r*r
+print("线性相关系数r", "\n", r)
+# print(R)
 
+# ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
+# 计算均方误差
+MSE = mean_squared_error(velocity_data['Opti'], velocity_data['VBT'])
+RMSE = math.sqrt(MSE)
+MAE = mean_absolute_error(velocity_data['Opti'], velocity_data['VBT'])
+R2 = r2_score(velocity_data['Opti'], velocity_data['VBT'])
+print("均方误差(MSE)", MSE)
+print("均方根误差(RMSE)", RMSE)
+print("平均绝对误差(MAE)", MAE)
+print("决定系数(R^2)", R2)
 
-
-
+# ————————————————————————————————————————————————————————————————————————————————————————————————————————————————

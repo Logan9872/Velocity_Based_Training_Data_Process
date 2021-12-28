@@ -6,10 +6,11 @@ import numpy as np
 from sklearn.metrics import mean_squared_error  # 均方误差|
 from sklearn.metrics import mean_absolute_error  # 平方绝对误差
 from sklearn.metrics import r2_score  # R square
+import pingouin as pg
 
 # 读取原始数据
-file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_031.csv'
-file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/031.csv"
+file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_003.csv'
+file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/003.csv"
 # 读取Opti的原始数据
 opti_track_data = pd.read_csv(file, skiprows=6, usecols=[2, 3, 4], encoding="unicode_escape")
 opti_track_time = pd.read_csv(file, skiprows=6, usecols=[1], encoding="unicode_escape")
@@ -113,7 +114,7 @@ plt.show()
 
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 # 求两个函数的决定系数R^2
-velocity_data = pd.DataFrame() # 新建一个速度对比的df
+velocity_data = pd.DataFrame()  # 新建一个速度对比的df
 
 # 截取动捕的数据[i:len]段，再截取和VBT设备一样的长度
 Opti_slice_data = distance['velocity'].iloc[Trans_index:len(distance['velocity'])]
@@ -144,3 +145,27 @@ print("平均绝对误差(MAE)", MAE)
 print("决定系数(R^2)", R2)
 
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+# # 计算ICC组内相关系数
+# VBT_ICC = pd.DataFrame()
+# Opti_ICC = pd.DataFrame()
+# # 生成VBT的list
+# VBT_ICC["velocity"] = velocity_data['VBT']
+# # VBT_ICC = VBT_ICC.replace(np.nan, 0)
+# VBT_ICC.insert(0, "reader", np.ones(VBT_ICC.shape[0]))
+# VBT_ICC.insert(0, "target", np.ones(VBT_ICC.shape[0]))
+#
+# # 生成Opti的list
+# Opti_ICC["velocity"] = velocity_data['Opti']
+# # Opti_ICC = Opti_ICC.replace(np.nan, 0)
+# Opti_ICC.insert(0, "reader", np.ones(Opti_ICC.shape[0])*2)
+# Opti_ICC.insert(0, "target", np.ones(Opti_ICC.shape[0])*2)
+
+# ICC_data = pd.concat([VBT_ICC, Opti_ICC])  # 将VBT和Opti两个速度列表合并成一个
+# ICC_data.to_csv('C:\\Users\\Administrator\\Desktop\\动捕和vbt曲线\\ICC\\ICC_Data.csv', index=False)
+# data = pd.read_csv('C:/Users/Administrator/Desktop/动捕和vbt曲线/ICC/ICC_Data.csv')
+
+# ICC_data = ICC_data.apply(pd.to_numeric, errors='raise')
+# ICC = pg.intraclass_corr(data=ICC_data, targets="target", raters="reader", ratings="velocity", nan_policy='omit')
+# print(ICC)
+
+# ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————

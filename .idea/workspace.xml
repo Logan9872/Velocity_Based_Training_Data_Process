@@ -4,8 +4,6 @@
     <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OptiTrack_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptiTrack_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$中的指标来源.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/代码中的指标来源.docx" beforeDir="false" afterPath="$PROJECT_DIR$/代码中的指标来源.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,10 @@
       <workItem from="1640175892210" duration="11373000" />
       <workItem from="1640219228656" duration="28734000" />
       <workItem from="1640561721702" duration="25843000" />
-      <workItem from="1640648654323" duration="26422000" />
+      <workItem from="1640648654323" duration="26456000" />
+      <workItem from="1640736506660" duration="590000" />
+      <workItem from="1640737712211" duration="5524000" />
+      <workItem from="1640823084545" duration="11925000" />
     </task>
     <servers />
   </component>
@@ -147,14 +148,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="518" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640190426079" />
-    <state x="330" y="75" key="SettingsEditor" timestamp="1640688625672">
+    <state x="84" y="79" key="SettingsEditor" timestamp="1640743943794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="330" y="75" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1640688625672" />
-    <state x="242" y="301" key="com.intellij.ide.util.TipDialog" timestamp="1640648654722">
+    <state x="84" y="79" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1640743943794" />
+    <state x="242" y="301" key="com.intellij.ide.util.TipDialog" timestamp="1640823088441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="242" y="301" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640648654722" />
+    <state x="242" y="301" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640823088441" />
     <state x="229" y="5" key="search.everywhere.popup" timestamp="1640178116817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -7,10 +7,16 @@ from sklearn.metrics import mean_squared_error  # 均方误差|
 from sklearn.metrics import mean_absolute_error  # 平方绝对误差
 from sklearn.metrics import r2_score  # R square
 import pingouin as pg
+# from rpy2.robjects import DataFrame, FloatVector, IntVector
+# from rpy2.robjects.packages import importr
+# from math import isclose
+# import rpy2
+# from rpy2.robjects import IntVector, pandas2ri
+# from rpy2.robjects.packages import importr
 
 # 读取原始数据
-file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_003.csv'
-file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/003.csv"
+file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_011.csv'
+file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/011.csv"
 # 读取Opti的原始数据
 opti_track_data = pd.read_csv(file, skiprows=6, usecols=[2, 3, 4], encoding="unicode_escape")
 opti_track_time = pd.read_csv(file, skiprows=6, usecols=[1], encoding="unicode_escape")
@@ -126,7 +132,6 @@ velocity_data['VBT'] = VBT_data['velocity']
 plt.plot(velocity_data['VBT'], linewidth=0.4, color='blue', label='VBT')
 plt.plot(velocity_data['Opti'], linewidth=0.4, color='red', label='Opti Track')
 plt.show()
-# 将nan补0
 # 计算相关系数，默认是‘pearson’线性相关;'kendall','spearman'
 r = velocity_data.corr()
 R = r*r
@@ -145,27 +150,28 @@ print("平均绝对误差(MAE)", MAE)
 print("决定系数(R^2)", R2)
 
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# # 计算ICC组内相关系数
-# VBT_ICC = pd.DataFrame()
-# Opti_ICC = pd.DataFrame()
+# 计算ICC组内相关系数
+VBT_ICC = pd.DataFrame()
+Opti_ICC = pd.DataFrame()
 # # 生成VBT的list
-# VBT_ICC["velocity"] = velocity_data['VBT']
-# # VBT_ICC = VBT_ICC.replace(np.nan, 0)
-# VBT_ICC.insert(0, "reader", np.ones(VBT_ICC.shape[0]))
-# VBT_ICC.insert(0, "target", np.ones(VBT_ICC.shape[0]))
+VBT_ICC["velocity"] = velocity_data['VBT']
+VBT_ICC.insert(0, "reader", "A")
+VBT_ICC.insert(0, "target", range(VBT_ICC.shape[0]))
 #
-# # 生成Opti的list
-# Opti_ICC["velocity"] = velocity_data['Opti']
-# # Opti_ICC = Opti_ICC.replace(np.nan, 0)
-# Opti_ICC.insert(0, "reader", np.ones(Opti_ICC.shape[0])*2)
-# Opti_ICC.insert(0, "target", np.ones(Opti_ICC.shape[0])*2)
-
-# ICC_data = pd.concat([VBT_ICC, Opti_ICC])  # 将VBT和Opti两个速度列表合并成一个
-# ICC_data.to_csv('C:\\Users\\Administrator\\Desktop\\动捕和vbt曲线\\ICC\\ICC_Data.csv', index=False)
+# 生成Opti的list
+Opti_ICC["velocity"] = velocity_data['Opti']
+Opti_ICC = Opti_ICC.replace(np.nan, 0)
+Opti_ICC.insert(0, "reader", "B")
+Opti_ICC.insert(0, "target", range(Opti_ICC.shape[0]))
+ICC_data = pd.concat([VBT_ICC, Opti_ICC])  # 将VBT和Opti两个速度列表合并成一个
+# print(ICC_data)
+# ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+ICC_data.to_csv('C:\\Users\\Administrator\\Desktop\\动捕和vbt曲线\\ICC\\ICC_Data.csv', index=False)
 # data = pd.read_csv('C:/Users/Administrator/Desktop/动捕和vbt曲线/ICC/ICC_Data.csv')
 
-# ICC_data = ICC_data.apply(pd.to_numeric, errors='raise')
-# ICC = pg.intraclass_corr(data=ICC_data, targets="target", raters="reader", ratings="velocity", nan_policy='omit')
-# print(ICC)
+ICC = pg.intraclass_corr(data=ICC_data, targets="target", raters="reader", ratings="velocity")
+print(ICC)
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+

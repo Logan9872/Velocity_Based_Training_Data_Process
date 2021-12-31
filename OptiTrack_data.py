@@ -157,7 +157,7 @@ Opti_ICC = pd.DataFrame()
 VBT_ICC["velocity"] = velocity_data['VBT']
 VBT_ICC.insert(0, "reader", "A")
 VBT_ICC.insert(0, "target", range(VBT_ICC.shape[0]))
-#
+
 # 生成Opti的list
 Opti_ICC["velocity"] = velocity_data['Opti']
 Opti_ICC = Opti_ICC.replace(np.nan, 0)
@@ -169,9 +169,23 @@ ICC_data = pd.concat([VBT_ICC, Opti_ICC])  # 将VBT和Opti两个速度列表合�
 ICC_data.to_csv('C:\\Users\\Administrator\\Desktop\\动捕和vbt曲线\\ICC\\ICC_Data.csv', index=False)
 # data = pd.read_csv('C:/Users/Administrator/Desktop/动捕和vbt曲线/ICC/ICC_Data.csv')
 
+# targets 为目标数据的分类（每条数据一类），raters为评判人的分类，ratings为实际数据。
 ICC = pg.intraclass_corr(data=ICC_data, targets="target", raters="reader", ratings="velocity")
 print(ICC)
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
+# # 计算CV变异系数(因为数据中存在大量负值,且均值为负的接近0的值，故不用变异系数)
+# # 计算VBT的CV
+# VBT_mean = np.mean(VBT_ICC["velocity"])  # 计算平均值
+# VBT_std = np.std(VBT_ICC["velocity"], ddof=0)  # 计算标准差
+# VBT_CV = VBT_std / VBT_mean
+# # 计算Opti的CV
+# Opti_mean = np.mean(Opti_ICC["velocity"])
+# Opti_std = np.std(Opti_ICC["velocity"], ddof=0)  # 计算标准差
+# Opti_CV = Opti_std/Opti_mean
+# print(VBT_CV)
+# print(Opti_CV)
+# print(VBT_std)
+# print(Opti_std)
+# ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 

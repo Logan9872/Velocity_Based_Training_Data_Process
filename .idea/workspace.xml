@@ -4,6 +4,7 @@
     <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OptiTrack_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptiTrack_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/代码中的指标来源.docx" beforeDir="false" afterPath="$PROJECT_DIR$/代码中的指标来源.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <workItem from="1640736506660" duration="590000" />
       <workItem from="1640737712211" duration="5524000" />
       <workItem from="1640823084545" duration="12522000" />
-      <workItem from="1640918670524" duration="5724000" />
+      <workItem from="1640918670524" duration="8162000" />
     </task>
     <servers />
   </component>

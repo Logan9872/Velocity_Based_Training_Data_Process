@@ -7,12 +7,6 @@ from sklearn.metrics import mean_squared_error  # 均方误差|
 from sklearn.metrics import mean_absolute_error  # 平方绝对误差
 from sklearn.metrics import r2_score  # R square
 import pingouin as pg
-# from rpy2.robjects import DataFrame, FloatVector, IntVector
-# from rpy2.robjects.packages import importr
-# from math import isclose
-# import rpy2
-# from rpy2.robjects import IntVector, pandas2ri
-# from rpy2.robjects.packages import importr
 
 # 读取原始数据
 file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_011.csv'
@@ -55,7 +49,7 @@ plt.show()
 # Opti Track设备和VBT设备滤波
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# # 绘制两条曲线重叠图
+# # 绘制两条曲线重叠图(未截取)
 # VBT_data['timeD'] = VBT_data.apply(lambda x: x['time'], axis=1)
 # plt.plot(opti_track_time, distance['velocity'], linewidth=0.4, color='red', label='Opti Track')
 # plt.plot(VBT_data['timeD'], VBT_data['velocity'], linewidth=0.4, color='blue', label='VBT')

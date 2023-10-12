@@ -3,14 +3,17 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.metrics import mean_squared_error  # 均方误差|
+from sklearn.metrics import mean_squared_error  # 均方误差
 from sklearn.metrics import mean_absolute_error  # 平方绝对误差
 from sklearn.metrics import r2_score  # R square
 import pingouin as pg
 
 # 读取原始数据
-file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_011.csv'
-file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/011.csv"
+file = "C:/Users/Administrator/Desktop/1.12VBT实验数据处理/动捕数据/04LF/04LF_003.csv"
+file_vbt = "C:/Users/Administrator/Desktop/1.12VBT实验数据处理/vbt原始数据/04LF/04-003.csv"
+# file = 'C:/Users/Administrator/Desktop/optical_track/1222bvt_031.csv'
+# file_vbt = "C:/Users/Administrator/Desktop/动捕预实验/vbt设备数据/12.22vbt原始数据/031.csv"
+
 # 读取Opti的原始数据
 opti_track_data = pd.read_csv(file, skiprows=6, usecols=[2, 3, 4], encoding="unicode_escape")
 opti_track_time = pd.read_csv(file, skiprows=6, usecols=[1], encoding="unicode_escape")
@@ -59,7 +62,7 @@ plt.show()
 # plt.show()
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# 计算两条曲线的的相关函数，找到相关性最大的计算时间差
+# 计算两条曲线的相关函数，找到相关性最大的计算时间差
 
 # 反转VBT数据
 VBT_data_reverse = VBT_data['velocity'][::-1]
@@ -72,7 +75,7 @@ Opti_data = Opti_data.apply(pd.to_numeric, errors='raise')
 # 转换成数组
 VBT_array = np.array(VBT_data_reverse)
 Opti_array = np.array(Opti_data)
-
+Opti_array = np.nan_to_num(Opti_array)
 # 计算卷积
 Convo = np.convolve(VBT_array, Opti_array)
 
@@ -83,7 +86,7 @@ print(len(VBT_array))
 print(len(Opti_array))
 
 # nan全部替换成0
-Convo = np.nan_to_num(Convo)
+# Convo = np.nan_to_num(Convo)
 Convo_max = max(Convo)
 Convo_array = Convo.tolist()
 # 找到两条函数相关性最大的index,两条曲线时间轴对齐的为(i-m+1)
@@ -116,21 +119,36 @@ plt.show()
 # 求两个函数的决定系数R^2
 velocity_data = pd.DataFrame()  # 新建一个速度对比的df
 
-# 截取动捕的数据[i:len]段，再截取和VBT设备一样的长度
-Opti_slice_data = distance['velocity'].iloc[Trans_index:len(distance['velocity'])]
-# 重排截取后数据的index
+# 截取VBT和Opti数据的两端，使得两条曲线对齐
+# Opti和VBT数据截取的index
+Opti_Trans_index = Trans_index if Trans_index >= 0 else 0
+VBT_Trans_index = 0 if Trans_index >= 0 else -Trans_index
+# Opti和VBT数据截取的长度，取两曲线的交集
+Opti_len = len(VBT_data['velocity'])if Trans_index >= 0 else len(distance['velocity'])
+VBT_len = len(distance['velocity']) if Trans_index >= 0 else len(VBT_data['velocity'])
+
+# 重排截取后Opti数据的index，使其从0开始
+Opti_slice_data = distance['velocity'].iloc[Opti_Trans_index:len(distance['velocity'])]
 Opti_slice_data.reset_index(drop=True, inplace=True)
-# 将两组数据形成新的df，计算其P相关系数
-velocity_data['Opti'] = Opti_slice_data.iloc[0:len(VBT_data['velocity'])]
-velocity_data['VBT'] = VBT_data['velocity']
+velocity_data['Opti'] = Opti_slice_data.iloc[0:Opti_len]
+
+# 重排截取后VBT数据的index，使其从0开始
+VBT_slice_data = VBT_data['velocity'].iloc[VBT_Trans_index:len(VBT_data['velocity'])]
+VBT_slice_data.reset_index(drop=True, inplace=True)
+velocity_data['VBT'] = VBT_slice_data[0:VBT_len]
+
+# 绘制截取对齐后的数据
 plt.plot(velocity_data['VBT'], linewidth=0.4, color='blue', label='VBT')
 plt.plot(velocity_data['Opti'], linewidth=0.4, color='red', label='Opti Track')
+plt.legend(loc="best", fontsize=8)
+plt.title("reset data")
 plt.show()
 # 计算相关系数，默认是‘pearson’线性相关;'kendall','spearman'
 r = velocity_data.corr()
-R = r*r
 print("线性相关系数r", "\n", r)
+# R = r*r
 # print(R)
+
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————
 # 计算均方误差
@@ -168,18 +186,18 @@ ICC = pg.intraclass_corr(data=ICC_data, targets="target", raters="reader", ratin
 print(ICC)
 
 # ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-# # 计算CV变异系数(因为数据中存在大量负值,且均值为负的接近0的值，故不用变异系数)
-# # 计算VBT的CV
-# VBT_mean = np.mean(VBT_ICC["velocity"])  # 计算平均值
-# VBT_std = np.std(VBT_ICC["velocity"], ddof=0)  # 计算标准差
-# VBT_CV = VBT_std / VBT_mean
-# # 计算Opti的CV
-# Opti_mean = np.mean(Opti_ICC["velocity"])
-# Opti_std = np.std(Opti_ICC["velocity"], ddof=0)  # 计算标准差
-# Opti_CV = Opti_std/Opti_mean
-# print(VBT_CV)
-# print(Opti_CV)
-# print(VBT_std)
-# print(Opti_std)
+# 计算CV变异系数(因为数据中存在大量负值,且均值为负的接近0的值，故不用变异系数)
+# 计算VBT的CV
+VBT_mean = np.mean(VBT_ICC["velocity"])  # 计算平均值
+VBT_std = np.std(VBT_ICC["velocity"], ddof=0)  # 计算标准差
+VBT_CV = VBT_std / VBT_mean
+# 计算Opti的CV
+Opti_mean = np.mean(Opti_ICC["velocity"])
+Opti_std = np.std(Opti_ICC["velocity"], ddof=0)  # 计算标准差
+Opti_CV = Opti_std/Opti_mean
+print(VBT_CV)
+print(Opti_CV)
+print(VBT_std)
+print(Opti_std)
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 

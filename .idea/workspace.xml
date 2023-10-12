@@ -4,66 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/前中后测多余信号绘制/中测_处理多余信号.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/前中后测多余信号绘制/前测_处理多余信号.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/前中后测多余信号绘制/后测_处理多余信号.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/前中后测多余信号绘制/干预实验处理多余信号.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/单个深蹲动作划分/分离每个阶段的单个深蹲_中测.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/单个深蹲动作划分/分离每个阶段的单个深蹲_前测.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/单个深蹲动作划分/分离每个阶段的单个深蹲_后测.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/向心离心阶段划分/中测阶段划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/向心离心阶段划分/前测阶段划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/向心离心阶段划分/后测阶段划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/指标计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/数据滤波/低通滤波器_加速度.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/数据滤波/低通滤波器_速度.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10%速度阈值干预实验/指标计算/数据滤波/曲线绘制_不滤波.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15VBTprocess/915meanV计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15VBTprocess/VBT_Only动作划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15VBTprocess/VBT和Opti动作划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15VBTprocess/离心向心阶段划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WSY/分离每个阶段的单个深蹲.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WSY/向心离心阶段分离.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WSY/计算ICC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/#数据对齐与计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/CSV合并.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/不同负荷的指标均值计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/不同载荷指标的计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/不同载荷离心向心划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/信效度指标绘图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/动作划分.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/回归曲线绘制.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/干预实验划分离心向心阶段.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/离心向心阶段计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/%RM/连续动作波形的绘制.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/不同负荷回归图绘制.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/中负荷数据计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/低负荷指标均值计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/低负荷数据计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/高负荷指标均值计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/%load/高负荷数据计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/other/ICC计算示例.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/低通滤波器.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/批量处理后的数据计算均值.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/23draw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/CSV合并.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/不同负载下指标均值计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/中文版图片绘制/全波形指标的回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/中文版图片绘制/统计学向心回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/中文版图片绘制/统计学离心回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/全波形75%&amp;Full重新绘制.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/全波形指标的回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/全波形数据的指标计算.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/统计学向心回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/统计学指标的回归图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistical/统计学离心回归图.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/optimic_track_data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/optimic_track_data.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OptiTrack_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptiTrack_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/代码中的指标来源.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="9f3e8389-db52-49f5-9790-8e6b03c63890" name="Default Changelist" comment="Default Changelist" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -1449,11 +1390,35 @@
       <workItem from="1683533610345" duration="1887000" />
       <workItem from="1686579296923" duration="87000" />
       <workItem from="1686579580481" duration="1045000" />
+      <workItem from="1697075205961" duration="1031000" />
     </task>
+    <task id="LOCAL-00001" summary="Default Changelist">
+      <created>1697075277828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697075277828</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
